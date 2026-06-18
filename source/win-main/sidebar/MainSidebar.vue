@@ -16,6 +16,7 @@
       <ReferencesTab v-show="currentTab === 'references'"></ReferencesTab>
       <RelatedFilesTab v-show="currentTab === 'relatedFiles'"></RelatedFilesTab>
       <OtherFilesTab v-show="currentTab === 'attachments'"></OtherFilesTab>
+      <AiAssistantTab v-show="currentTab === 'ai'"></AiAssistantTab>
     </div>
   </div>
 </template>
@@ -42,6 +43,7 @@ import ToCTab from './ToCTab.vue'
 import ReferencesTab from './ReferencesTab.vue'
 import RelatedFilesTab from './RelatedFilesTab.vue'
 import OtherFilesTab from './OtherFilesTab.vue'
+import AiAssistantTab from './AiAssistantTab.vue'
 import { useConfigStore } from 'source/pinia'
 
 const configStore = useConfigStore()
@@ -77,6 +79,12 @@ const tabs = [
     id: 'attachments',
     target: 'sidebar-files',
     label: trans('Other files')
+  },
+  {
+    icon: 'wand',
+    id: 'ai',
+    target: 'sidebar-ai',
+    label: trans('AI Assistant')
   }
 ]
 
